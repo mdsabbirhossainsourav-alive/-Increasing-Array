@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int n;
+    cin >> n;
+    vector<long long> arr(n);
+    for (int i=0; i<n; i++) 
+    {
+        cin >> arr[i];
+    }
+    long long moves = 0;
+    long long prev = arr[0]; 
+    for (int i=1; i<n; i++) 
+    {
+        if (arr[i] < prev) 
+        {
+            moves += prev - arr[i];
+        } 
+        else 
+        {
+            prev = arr[i];
+        }
+    }
+    cout << moves << endl;
+    return 0;
+}
